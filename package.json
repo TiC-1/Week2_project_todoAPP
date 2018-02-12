@@ -1,0 +1,25 @@
+{
+  "name": "week2_todo_mi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dom.js",
+  "scripts": {
+    "test": "tape ./tests/*.test.js | tap-spec",
+    "test:watch": "nodemon -q -x 'npm test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TiC-1/week2_todo_mi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TiC-1/week2_todo_mi/issues"
+  },
+  "homepage": "https://github.com/TiC-1/week2_todo_mi#readme",
+  "devDependencies": {
+    "nodemon": "^1.14.12",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}
