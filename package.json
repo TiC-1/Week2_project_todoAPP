@@ -4,7 +4,7 @@
   "description": "",
   "main": "dom.js",
   "scripts": {
-    "test": "tape ./tests/*.test.js | tap-spec",
+    "test": "tape test.js | tap-spec",
     "test:watch": "nodemon -q -x 'npm test'"
   },
   "repository": {
