@@ -40,14 +40,11 @@ test('Test addTodo function', function(t) {
   t.end();
 });
 
-// ****************************************************
-
 
 // *****************************************************
 // deleteTodo function
 
 test('Test deleteTodo function', function(t) {
-
 
   var newTodosList = logic.addTodo([], 'wash dishes');
   newTodosList = logic.addTodo(newTodosList, 'go to supermarket');
@@ -63,31 +60,35 @@ test('Test deleteTodo function', function(t) {
   ];
 
   t.deepEquals(newTodosList , expectedTodosList,"Todo deleted !");
+
   t.end();
 });
 
+
 // *****************************************************
 // markTodo function
+
 test('Test markTodo function', function(t) {
 
-var newTodosList = logic.addTodo([], 'go see mom');
-newTodosList = logic.addTodo(newTodosList, 'go to yoga');
+  var newTodosList = logic.addTodo([], 'go see mom');
+  newTodosList = logic.addTodo(newTodosList, 'go to yoga');
 
-newTodosList = logic.markTodo(newTodosList, 5);
+  newTodosList = logic.markTodo(newTodosList, 5);
 
-var expectedTodosList = [
-  {
-    id:5,
-    description: 'go see mom',
-    done: true,
-  },
-  {
-    id:6,
-    description: 'go to yoga',
-    done: false,
-  },
-];
+  var expectedTodosList = [
+    {
+      id:5,
+      description: 'go see mom',
+      done: true,
+    },
+    {
+      id:6,
+      description: 'go to yoga',
+      done: false,
+    },
+  ];
 
-t.deepEquals(newTodosList , expectedTodosList,"Todo marked True !");
-t.end();
+  t.deepEquals(newTodosList , expectedTodosList,"Todo marked !");
+
+  t.end();
 });

@@ -57,12 +57,12 @@ var todoFunctions = {
     // this element will have its done value toggled
     // hint: array.map
 
-        var newTodos = todos.map(function(val) {  // use the array.map to take an object at a time and return a new array
-           val.done = (val.id == idToMark); // set the boolean val.done with the boolean of the comparison of the id of val with the id passed in the main function
-           return val;
-           }
+    return todos.map(function(val) {  // use the array.map to take an object at a time and return a new array
+      val.done = (val.id == idToMark); // set the boolean val.done with the boolean of the comparison of the id of val with the id passed in the main function
+      return val;
+    }
     );
-  return newTodos;
+
   },
 
   sortTodos: function(todos, sortFunction) {
