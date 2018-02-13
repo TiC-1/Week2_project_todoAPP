@@ -1,9 +1,12 @@
 var test = require('tape');
 var logic = require('./logic');
 
-test('add new Todo Test', function(t) {
-    var existingTodosList = [
-    ];
+// *****************************************************
+// addTodo function
+
+test('Test addTodo function', function(t) {
+// Add first todo
+    var existingTodosList = [];
     var newTodosList = logic.addTodo(existingTodosList, 'call mom');
 
     var expectedTodosList = [
@@ -12,9 +15,11 @@ test('add new Todo Test', function(t) {
           description: 'call mom',
           done: false,
           },
-    ]
-  t.deepEquals(newTodosList , expectedTodosList,"test ok!!");
+    ];
 
+  t.deepEquals(newTodosList , expectedTodosList,"First toto added !");
+
+// Add new todo
   newTodosList = logic.addTodo(newTodosList, 'buy potatos');
 
   expectedTodosList = [
@@ -22,13 +27,41 @@ test('add new Todo Test', function(t) {
         id:1,
         description: 'call mom',
         done: false,
-        },
-        {
+      },
+      {
         id:2,
         description: 'buy potatos',
         done: false,
-        },
-  ]
-t.deepEquals(newTodosList , expectedTodosList,"test ok!!");
+      },
+  ];
+
+  t.deepEquals(newTodosList , expectedTodosList,"New todo added !");
+
+  t.end();
+});
+
+// ****************************************************
+
+
+// *****************************************************
+// deleteTodo function
+
+test('Test deleteTodo function', function(t) {
+
+
+  var newTodosList = logic.addTodo([], 'wash dishes');
+  newTodosList = logic.addTodo(newTodosList, 'go to supermarket');
+
+  newTodosList = logic.deleteTodo(newTodosList, 3);
+
+  var expectedTodosList = [
+    {
+      id:4,
+      description: 'go to supermarket',
+      done: false,
+    },
+  ];
+
+  t.deepEquals(newTodosList , expectedTodosList,"Todo deleted !");
   t.end();
 });
