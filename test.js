@@ -89,6 +89,20 @@ test('Test markTodo function', function(t) {
   ];
 
   t.deepEquals(newTodosList , expectedTodosList,"Todo marked !");
+  newTodosList = logic.markTodo(newTodosList, 6);
+  var expectedTodosList = [
+    {
+      id:5,
+      description: 'go see mom',
+      done: true,
+    },
+    {
+      id:6,
+      description: 'go to yoga',
+      done: true,
+    },
+  ];
 
+  t.deepEquals(newTodosList , expectedTodosList,"Todo marked !");
   t.end();
 });
