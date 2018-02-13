@@ -14,16 +14,23 @@
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
+    // Create <li> tag
     var todoNode = document.createElement('li');
 
-    // you will need to use addEventListener
-    var descriptionSpan = document.createElement('span');
-    descriptionSpan.innerHTML = todo.description;
-    todoNode.appendChild(descriptionSpan);
+    // DESCRIPTION
+    // Create <span> tag
+    var descriptionNode = document.createElement('span');
+    // Write todo description property value in descriptionNode using innerHTML method
+    descriptionNode.innerHTML = todo.description;
+    // Add descriptionNode as a toNode child
+    todoNode.appendChild(descriptionNode);
 
-    var doneSpan = document.createElement('span');
-      doneSpan.innerHTML = todo.done;
-    todoNode.appendChild(doneSpan);
+    // DONE TRUE/FALSE
+    var doneNode = document.createElement('span');
+    doneNode.innerHTML = todo.done;
+    todoNode.appendChild(doneNode);
+
+    // you will need to use addEventListener
 
     // this adds the delete button
     var deleteButtonNode = document.createElement('button');
@@ -52,13 +59,14 @@
       // what does event.preventDefault do?
       // what is inside event.target?
 
+      // Prevent to send the form
       event.preventDefault();
-
-
-      var description = event.target.querySelector("input").value;
+      // Get the value of what's is in the input field of the form
+      // and assign it to 'description'
+      var description = event.target.querySelector("input").value; // event.target ....
 
       // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(state ,description); // ?? change this!
+      var newState = todoFunctions.addTodo(state, description); // ?? change this!
       update(newState);
     });
   }
