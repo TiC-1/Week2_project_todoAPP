@@ -93,7 +93,7 @@ ul li {
     background: #eee;
     font-size: 30px;
     transition: 0.2s;
-      text-align: center;
+    text-align: center;
 }
 
 .checked {
@@ -148,7 +148,17 @@ float: right;
 /*.description{
 
 }*/
+.sort{
+  background: black;
+  color: #da533d;
+  position: fixed;
+  bottom: 120px;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+  
 
+}
 .textField {
   text-align: center;
   width: 100%;
@@ -157,7 +167,6 @@ float: right;
   font-size: 30px;
   position: fixed;
   bottom: 60px;
-
 }
 
 
