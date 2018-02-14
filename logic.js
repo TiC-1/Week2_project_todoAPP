@@ -70,15 +70,28 @@ var todoFunctions = {
 
   },
 
+  sortByDescription: function (a,b) {
+    return a.description > b.description;
+  },
+
+  // sortById: function (a,b) {
+  //   return a.id - b.id;
+  // },
+  //
+  // sortByState: function (a,b) {
+  //   return a.done > b.done;
+  // },
+
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
 
-    console.log("Sorted !");
+     var sortedTodos = todos.sort(todoFunctions.sortByDescription);
+     return sortedTodos;
 
-  }
+  },
 };
 
 

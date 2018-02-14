@@ -118,17 +118,12 @@ test('Test sortTodos function', function(t) {
     newTodosList = logic.addTodo(newTodosList, 'bcde');
     newTodosList = logic.addTodo(newTodosList, 'abcde');
 
-    newTodosList = logic.sortTodos(newTodosList, sortByDescription);
+    newTodosList = logic.sortTodos(newTodosList, logic.sortByDescription);
 
     var expectedTodosList = [
       {
-        id:7,
-        description: 'de',
-        done: false,
-      },
-      {
-        id:8,
-        description: 'cde',
+        id:10,
+        description: 'abcde',
         done: false,
       },
       {
@@ -137,8 +132,13 @@ test('Test sortTodos function', function(t) {
         done: false,
       },
       {
-        id:10,
-        description: 'abcde',
+        id:8,
+        description: 'cde',
+        done: false,
+      },
+      {
+        id:7,
+        description: 'de',
         done: false,
       },
     ];

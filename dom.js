@@ -33,8 +33,6 @@
     });
     // Add the button to todoNode
     todoNode.appendChild(markTodoButtonNode);
-    // add classes for css
-    // ...
 
 
     // DESCRIPTION
@@ -42,13 +40,11 @@
     var descriptionNode = document.createElement('span');
     // Add a class
     descriptionNode.className = "description";
-    // Write todo description property value in descriptionNode using innerHTML method
+    // Write todo description property value in descriptionNode
     descriptionNode.textContent = todo.description;
     // Add descriptionNode as a toNode child
     todoNode.appendChild(descriptionNode);
 
-
-    // you will need to use addEventListener
 
     // DELETE BUTTON
     // Add <button> tag
@@ -91,16 +87,16 @@
     });
   };
 
-
+  // When 'sort button' is clicked
   if (sortTodosForm) {
     sortTodosForm.addEventListener('submit', function(event) {
 
       // Prevent to send the form
       event.preventDefault();
-      console.log("Sorted !");
-      // var newState = todoFunctions.sortTodos(todos, sortFunction);
-      //
-      // update(newState);
+
+      var newState = todoFunctions.sortTodos(state);
+      update(newState);
+
     });
 
   }
