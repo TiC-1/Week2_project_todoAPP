@@ -14,40 +14,54 @@
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function(todo) {
+
     // Create <li> tag
     var todoNode = document.createElement('li');
 
-    // DESCRIPTION
-    // Create <span> tag
-    var descriptionNode = document.createElement('span');
-    // Write todo description property value in descriptionNode using innerHTML method
-    descriptionNode.innerHTML = todo.description;
-    // Add descriptionNode as a toNode child
-    todoNode.appendChild(descriptionNode);
-
-    // DONE TRUE/FALSE
-    var doneNode = document.createElement('span');
-    doneNode.innerHTML = todo.done;
-    todoNode.appendChild(doneNode);
-
-    // you will need to use addEventListener
-
-    // this adds the delete button
-    var deleteButtonNode = document.createElement('button');
-    deleteButtonNode.addEventListener('click', function(event) {
-      var newState = todoFunctions.deleteTodo(state, todo.id);
-      update(newState);
-    });
-    todoNode.appendChild(deleteButtonNode);
-
-    // add markTodo button
+    // MARK BUTTON
+    // Create <button> tag
     var markTodoButtonNode = document.createElement('button');
+    // Add a class
+    markTodoButtonNode.className = "markButton";// Button text
+    var markTodoButtonTextNode = document.createTextNode(todo.done);
+    markTodoButtonNode.appendChild(markTodoButtonTextNode);
+    // Call funtion markTodo in logic.js
     markTodoButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
+    // Add the button to todoNode
     todoNode.appendChild(markTodoButtonNode);
     // add classes for css
+    // ...
+
+
+    // DESCRIPTION
+    // Create <span> tag
+    var descriptionNode = document.createElement('span');
+    // Add a class
+    descriptionNode.className = "description";
+    // Write todo description property value in descriptionNode using innerHTML method
+    descriptionNode.textContent = todo.description;
+    // Add descriptionNode as a toNode child
+    todoNode.appendChild(descriptionNode);
+
+
+    // you will need to use addEventListener
+
+    // DELETE BUTTON
+    // Add <button> tag
+    var deleteButtonNode = document.createElement('button');
+    // Add a class
+    deleteButtonNode.className = "deleteButton";// Add text to button
+    var deleteButtonTextNode = document.createTextNode("Delete");
+    deleteButtonNode.appendChild(deleteButtonTextNode);
+    deleteButtonNode.addEventListener('click', function(event) {
+      var newState = todoFunctions.deleteTodo(state, todo.id);
+      update(newState);
+    });
+    // Add the button to todoNode
+    todoNode.appendChild(deleteButtonNode);
 
     return todoNode;
   };
@@ -61,13 +75,18 @@
 
       // Prevent to send the form
       event.preventDefault();
-      // Get the value of what's is in the input field of the form
-      // and assign it to 'description'
-      var description = event.target.querySelector("input").value; // event.target ....
 
-      // hint: todoFunctions.addTodo
-      var newState = todoFunctions.addTodo(state, description); // ?? change this!
-      update(newState);
+      // Test if input value exists
+      if (event.target.querySelector("input").value) {
+        // Get the value of what's is in the input field of the form
+        // and assign it to 'description'
+        var description = event.target.querySelector("input").value; // event.target ....
+        // delete text in input field for next input
+        event.target.querySelector("input").value = "";
+        // hint: todoFunctions.addTodo
+        var newState = todoFunctions.addTodo(state, description); // ?? change this!
+        update(newState);
+      }
     });
   }
 
