@@ -3,13 +3,14 @@
 // it keeps everything inside hidden from the rest of our application
 (function() {
   // This is the dom node where we will keep our todo
+  var sortTodosForm = document.getElementById('sort-todos');
   var container = document.getElementById('todo-container');
   var addTodoForm = document.getElementById('add-todo');
 
   var state = [
     { id: -3, description: 'first todo', done: false },
-    { id: -2, description: 'second todo',done: false },
-    { id: -1, description: 'third todo',done: false },
+    { id: -2, description: 'second todo', done: false },
+    { id: -1, description: 'third todo', done: false },
   ]; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
@@ -22,7 +23,7 @@
     // Create <button> tag
     var markTodoButtonNode = document.createElement('button');
     // Add a class
-    markTodoButtonNode.className = "markButton";// Button text
+    markTodoButtonNode.className = "markButton";
     var markTodoButtonTextNode = document.createTextNode(todo.done);
     markTodoButtonNode.appendChild(markTodoButtonTextNode);
     // Call funtion markTodo in logic.js
@@ -88,7 +89,23 @@
         update(newState);
       }
     });
+  };
+
+
+  if (sortTodosForm) {
+    sortTodosForm.addEventListener('submit', function(event) {
+
+      // Prevent to send the form
+      event.preventDefault();
+      console.log("Sorted !");
+      // var newState = todoFunctions.sortTodos(todos, sortFunction);
+      //
+      // update(newState);
+    });
+
   }
+
+
 
   // you should not need to change this function
   var update = function(newState) {
