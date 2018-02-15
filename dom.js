@@ -22,10 +22,10 @@
     // MARK BUTTON
     // Create <button> tag
     var markTodoButtonNode = document.createElement('button');
+    // Add text insinde <button> and </button> tags
+    markTodoButtonNode.textContent = todo.done;
     // Add a class
     markTodoButtonNode.className = "markButton";
-    var markTodoButtonTextNode = document.createTextNode(todo.done);
-    markTodoButtonNode.appendChild(markTodoButtonTextNode);
     // Call funtion markTodo in logic.js
     markTodoButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
@@ -49,10 +49,11 @@
     // DELETE BUTTON
     // Add <button> tag
     var deleteButtonNode = document.createElement('button');
+    // Text to button
+    deleteButtonNode.textContent = "Delete";
     // Add a class
-    deleteButtonNode.className = "deleteButton";// Add text to button
-    var deleteButtonTextNode = document.createTextNode("Delete");
-    deleteButtonNode.appendChild(deleteButtonTextNode);
+    deleteButtonNode.className = "deleteButton";
+    // Call funtion deleteTodo in logic.js
     deleteButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.deleteTodo(state, todo.id);
       update(newState);
