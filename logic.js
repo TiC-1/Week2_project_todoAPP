@@ -88,9 +88,12 @@ var todoFunctions = {
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
 
-     var sortedTodos = todos.sort(todoFunctions.sortByDescription);
-     return sortedTodos;
-
+    // duplicate array
+    var newTodos = todos.map(function(item) {
+       return item;
+    });
+    // return sorted array
+    return newTodos.sort(todoFunctions.sortByDescription);
   },
 };
 
