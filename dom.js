@@ -21,6 +21,7 @@
     if (todo.done){
       todoNode.className = "checked";
     }
+    todoNode.dataset.id = todo.id;
     // MARK BUTTON
     // Create <button> tag
     var markTodoButtonNode = document.createElement('button');
@@ -29,9 +30,8 @@
     // Add a class
     markTodoButtonNode.className = "markButton";
     // Call funtion markTodo in logic.js
-
     markTodoButtonNode.addEventListener('click', function(event) {
-      var newState = todoFunctions.markTodo(state, todo.id);
+      var newState = todoFunctions.markTodo(state, event.target.parentElement.dataset.id);
       update(newState);
 
 
@@ -60,7 +60,7 @@
     deleteButtonNode.className = "deleteButton";
     // Call funtion deleteTodo in logic.js
     deleteButtonNode.addEventListener('click', function(event) {
-      var newState = todoFunctions.deleteTodo(state, todo.id);
+      var newState = todoFunctions.deleteTodo(state, event.target.parentElement.dataset.id);
       update(newState);
     });
     // Add the button to todoNode
