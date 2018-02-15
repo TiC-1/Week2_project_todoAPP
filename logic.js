@@ -93,7 +93,7 @@ var todoFunctions = {
        return item;
     });
     // return sorted array
-    return newTodos.sort(todoFunctions.sortByDescription);
+    return newTodos.sort(sortFunction);
   },
 };
 
