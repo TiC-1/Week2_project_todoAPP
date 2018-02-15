@@ -102,7 +102,7 @@
       // Prevent to send the form
       event.preventDefault();
 
-      var newState = todoFunctions.sortTodos(state);
+      var newState = todoFunctions.sortTodos(state , todoFunctions.sortByDescription);
       update(newState);
 
     });

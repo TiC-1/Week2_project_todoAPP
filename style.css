@@ -67,16 +67,15 @@ body {
 */
 h1 {
   text-align: center;
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 38px;
   letter-spacing: 1.6px;
   color: #da533d;
   margin-bottom: 16px;
-  padding: 40px;
+  padding: 35px;
 }
 
 .header {
-  background-color: black;
+  background-color: #262D31;
 }
 
 
@@ -113,9 +112,6 @@ ul li:hover {
     background: #ddd;
 }
 
-/* .todo-container {
-  height: 50%;
-} */
 
 
 .markButton {
@@ -145,17 +141,9 @@ float: right;
     color: white;
 }
 
-/*.formStyle{
-  position: fixed;
-  bottom: 0px;
-}*/
 
-
-/*.description{
-
-}*/
 .sort{
-  background: black;
+  background: #262D31;
   color: #da533d;
   position: fixed;
   bottom: 120px;
@@ -165,6 +153,18 @@ float: right;
 
 
 }
+
+.sort-button {
+  background-color: white;
+      border: none;
+      color: #da533d;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+}
+
 .textField {
   text-align: center;
   width: 100%;
@@ -180,7 +180,7 @@ float: right;
 .buttonSub {
     padding: 10px;
     width: 100%;
-    background: black;
+    background: #262D31;
     color: #da533d;
     float: left;
     text-align: center;
