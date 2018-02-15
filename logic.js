@@ -71,7 +71,7 @@ var todoFunctions = {
   },
 
   sortByDescription: function (a,b) {
-    return a.description > b.description;
+    return a.description.toLowerCase() > b.description.toLowerCase();
   },
 
   // sortById: function (a,b) {
