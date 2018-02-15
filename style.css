@@ -68,7 +68,6 @@ body {
 h1 {
   text-align: center;
   font-size: 38px;
-  /* font-weight: bold; */
   letter-spacing: 1.6px;
   color: #da533d;
   margin-bottom: 16px;
@@ -113,9 +112,6 @@ ul li:hover {
     background: #ddd;
 }
 
-/* .todo-container {
-  height: 50%;
-} */
 
 
 .markButton {
@@ -145,15 +141,7 @@ float: right;
     color: white;
 }
 
-/*.formStyle{
-  position: fixed;
-  bottom: 0px;
-}*/
 
-
-/*.description{
-
-}*/
 .sort{
   background: #262D31;
   color: #da533d;
