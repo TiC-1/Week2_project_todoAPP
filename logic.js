@@ -95,6 +95,20 @@ var todoFunctions = {
     // return sorted array
     return newTodos.sort(todoFunctions.sortByDescription);
   },
+
+  statTodos: function(todos) {
+
+    var totalTodos = todos.length();
+    var doneTodos = todos.filter(function(item) {
+      return (item.done == false)
+    });
+    doneTodos = doneTodos.length();
+    var undoneTodos = totalTodos - doneTodos;
+
+    console.log("total: " + totalTodos, "done: " + doneTodos, "undone: " + undoneTodos);
+  },
+
+
 };
 
 
