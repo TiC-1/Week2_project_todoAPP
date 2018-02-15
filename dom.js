@@ -18,7 +18,9 @@
 
     // Create <li> tag
     var todoNode = document.createElement('li');
-
+    if (todo.done){
+      todoNode.className = "checked";
+    }
     // MARK BUTTON
     // Create <button> tag
     var markTodoButtonNode = document.createElement('button');
@@ -27,9 +29,12 @@
     var markTodoButtonTextNode = document.createTextNode(todo.done);
     markTodoButtonNode.appendChild(markTodoButtonTextNode);
     // Call funtion markTodo in logic.js
+
     markTodoButtonNode.addEventListener('click', function(event) {
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
+
+
     });
     // Add the button to todoNode
     todoNode.appendChild(markTodoButtonNode);
