@@ -61,10 +61,6 @@ var todoFunctions = {
       if (val.id == idToMark) {
         val.done = !val.done;
       } return val ;
-      /*}THIS WAS THE OLD CODE (NOT WORKING BECAUSE DOES NOT TOGGLE THE )
-      // use the array.map to take an object at a time and return a new array
-      val.done = (val.id == idToMark); // set the boolean val.done with the boolean of the comparison of the id of val with the id passed in the main function
-      return val; */
     }
     );
 
