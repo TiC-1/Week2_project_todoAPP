@@ -18,18 +18,23 @@
 
     // Create <li> tag
     var todoNode = document.createElement('li');
-
+    if (todo.done){
+      todoNode.className = "checked";
+    }
+    todoNode.dataset.id = todo.id;
     // MARK BUTTON
     // Create <button> tag
     var markTodoButtonNode = document.createElement('button');
+    // Add text insinde <button> and </button> tags
+    markTodoButtonNode.textContent = todo.done;
     // Add a class
     markTodoButtonNode.className = "markButton";
-    var markTodoButtonTextNode = document.createTextNode(todo.done);
-    markTodoButtonNode.appendChild(markTodoButtonTextNode);
     // Call funtion markTodo in logic.js
     markTodoButtonNode.addEventListener('click', function(event) {
-      var newState = todoFunctions.markTodo(state, todo.id);
+      var newState = todoFunctions.markTodo(state, event.target.parentElement.dataset.id);
       update(newState);
+
+
     });
     // Add the button to todoNode
     todoNode.appendChild(markTodoButtonNode);
@@ -49,12 +54,13 @@
     // DELETE BUTTON
     // Add <button> tag
     var deleteButtonNode = document.createElement('button');
+    // Text to button
+    deleteButtonNode.textContent = "Delete";
     // Add a class
-    deleteButtonNode.className = "deleteButton";// Add text to button
-    var deleteButtonTextNode = document.createTextNode("Delete");
-    deleteButtonNode.appendChild(deleteButtonTextNode);
+    deleteButtonNode.className = "deleteButton";
+    // Call funtion deleteTodo in logic.js
     deleteButtonNode.addEventListener('click', function(event) {
-      var newState = todoFunctions.deleteTodo(state, todo.id);
+      var newState = todoFunctions.deleteTodo(state, event.target.parentElement.dataset.id);
       update(newState);
     });
     // Add the button to todoNode
@@ -73,11 +79,13 @@
       // Prevent to send the form
       event.preventDefault();
 
+      // Get the value of what's is in the input field of the form
+      // and assign it to a var to use it easily
+      var inputNewTodo = event.target.querySelector("input").value;
       // Test if input value exists
-      if (event.target.querySelector("input").value) {
-        // Get the value of what's is in the input field of the form
-        // and assign it to 'description'
-        var description = event.target.querySelector("input").value; // event.target ....
+      if (inputNewTodo) {
+        // Assign it to 'description'
+        var description = inputNewTodo; // event.target ....
         // delete text in input field for next input
         event.target.querySelector("input").value = "";
         // hint: todoFunctions.addTodo

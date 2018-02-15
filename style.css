@@ -1,0 +1,193 @@
+/* CSS RESET
+
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* END OF RESET
+/* **************************************************************** */
+
+/* **************************************************************** */
+
+/* GENERAL SETTINGS */
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300i,400,500');
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: #333;
+}
+
+/* CSS RESET
+*/
+h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 1.6px;
+  color: #da533d;
+  margin-bottom: 16px;
+  padding: 40px;
+}
+
+.header {
+  background-color: black;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    margin-bottom: 100px;
+}
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 4px;
+    background: #eee;
+    font-size: 30px;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.checked {
+
+    text-decoration: line-through;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+    background: #ddd;
+}
+
+/* .todo-container {
+  height: 50%;
+} */
+
+
+.markButton {
+float: left;
+  top: 20px;
+    background-color: green;
+
+}
+
+.markButton:hover {
+    background-color: green;
+    color: white;
+}
+
+
+/* Style the close button */
+.deleteButton {
+
+float: right;
+  background-color: #f44336;
+    top: 20px;
+
+}
+
+.deleteButton:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/*.formStyle{
+  position: fixed;
+  bottom: 0px;
+}*/
+
+
+/*.description{
+
+}*/
+.sort{
+  background: black;
+  color: #da533d;
+  position: fixed;
+  bottom: 120px;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+
+
+}
+.textField {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  background-color: #d9d9d9;
+  font-size: 30px;
+  position: fixed;
+  bottom: 60px;
+}
+
+
+/* Style the "Submit" button */
+.buttonSub {
+    padding: 10px;
+    width: 100%;
+    background: black;
+    color: #da533d;
+    float: left;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: fixed;
+    bottom: 0px;
+
+}
