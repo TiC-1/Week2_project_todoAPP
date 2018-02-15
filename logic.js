@@ -67,7 +67,7 @@ var todoFunctions = {
   },
 
   sortByDescription: function (a,b) {
-    return a.description > b.description;
+    return a.description.toLowerCase() > b.description.toLowerCase();
   },
 
   // sortById: function (a,b) {
@@ -89,7 +89,7 @@ var todoFunctions = {
        return item;
     });
     // return sorted array
-    return newTodos.sort(todoFunctions.sortByDescription);
+    return newTodos.sort(sortFunction);
   },
 };
 
