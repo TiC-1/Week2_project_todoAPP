@@ -73,11 +73,13 @@
       // Prevent to send the form
       event.preventDefault();
 
+      // Get the value of what's is in the input field of the form
+      // and assign it to a var to use it easily
+      var inputNewTodo = event.target.querySelector("input").value;
       // Test if input value exists
-      if (event.target.querySelector("input").value) {
-        // Get the value of what's is in the input field of the form
-        // and assign it to 'description'
-        var description = event.target.querySelector("input").value; // event.target ....
+      if (inputNewTodo) {
+        // Assign it to 'description'
+        var description = inputNewTodo; // event.target ....
         // delete text in input field for next input
         event.target.querySelector("input").value = "";
         // hint: todoFunctions.addTodo
