@@ -65,17 +65,23 @@ body {
 
 /* CSS RESET
 */
-h1 {
-  text-align: center;
-  font-size: 38px;
-  letter-spacing: 1.6px;
-  color: #da533d;
-  margin-bottom: 16px;
-  padding: 35px;
-}
 
 .header {
   background-color: #262D31;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 1.6px;
+  color: #da533d;
+  padding: 20px;
+}
+
+.stats {
+  color: white;
+  text-align: center;
+  padding: 10px;
 }
 
 

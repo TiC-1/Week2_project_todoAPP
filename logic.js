@@ -94,14 +94,19 @@ var todoFunctions = {
 
   statTodos: function(todos) {
 
-    var totalTodos = todos.length();
-    var doneTodos = todos.filter(function(item) {
-      return (item.done == false)
-    });
-    doneTodos = doneTodos.length();
+    var todosStats = [];
+    var totalTodos = todos.length;
+    var doneTodos = todos.filter(function(item) {return (item.done == true);}).length;
     var undoneTodos = totalTodos - doneTodos;
 
-    console.log("total: " + totalTodos, "done: " + doneTodos, "undone: " + undoneTodos);
+    todosStats = {
+      'total': totalTodos,
+      'done': doneTodos,
+      'undone': undoneTodos
+    }
+
+    return todosStats;
+
   },
 
 

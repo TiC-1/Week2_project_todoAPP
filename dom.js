@@ -109,6 +109,15 @@
 
   }
 
+  // Stats
+  var updateStats = function(state) {
+    // Call statTodos funtion in logic.js to proccess 'state'
+    var stateStats = todoFunctions.statTodos(state);
+    // DOM-manipulation to display 'stateStats'
+    var statsNode = document.querySelector(".header").querySelector('.stats');
+    statsNode.textContent = "Total: " + stateStats.total + " / " + "Done: " + stateStats.done +  " / " + "Undone: " + stateStats.undone;
+    statsNode.appendChild(statsNode.textContent);
+  }
 
 
   // you should not need to change this function
@@ -127,6 +136,9 @@
 
     // you may want to add a class for css
     container.replaceChild(todoListNode, container.firstChild);
+
+    // call updateStats function
+    updateStats(state);
   };
 
   if (container) renderState(state);
