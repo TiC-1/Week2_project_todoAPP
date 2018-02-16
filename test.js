@@ -147,3 +147,46 @@ test('Test sortTodos function', function(t) {
 
     t.end();
   });
+
+
+  // *****************************************************
+  // statTodos function
+
+  test('Test statTodos function', function(t) {
+
+      // Test 1
+      var newTodosList = logic.addTodo([], 'id_11');
+      newTodosList = logic.addTodo(newTodosList, 'id_12');
+
+      var statTodos = logic.statTodos(newTodosList);
+
+      var expectedStat = {
+        total: 2,
+        done: 0,
+        undone: 2,
+      };
+
+      t.deepEquals(statTodos , expectedStat, "Stats test1 OK !");
+
+      // Test 2
+
+      var newTodosList = logic.addTodo([], 'id_13');
+      newTodosList = logic.addTodo(newTodosList, 'id_14');
+      newTodosList = logic.addTodo(newTodosList, 'id_15');
+      newTodosList = logic.addTodo(newTodosList, 'id_16');
+
+      newTodosList = logic.markTodo(newTodosList, 16);
+      newTodosList = logic.markTodo(newTodosList, 14);
+
+      var statTodos = logic.statTodos(newTodosList);
+
+      var expectedStat = {
+        total: 4,
+        done: 2,
+        undone: 2,
+      };
+
+      t.deepEquals(statTodos , expectedStat, "Stats test2 OK !");
+
+      t.end();
+    });

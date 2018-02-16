@@ -2,36 +2,36 @@
 <html>
 
 
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>tdd todo</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <h1>TIC-1 ToDo App</h1>
+    <p class="stats">placeholder text</p>
+  </header>
+  <div id="todo-container">
+    <ul>
+    </ul>
+  </div>
+  <form id="sort-todos" class="sort">
+    <input type="submit" class="sort-button" name="" value="Sort by Name">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>tdd todo</title>
-    <link rel="stylesheet" href="./style.css">
-  </head>
+  </form>
+  <form id="add-todo" class="formStyle">
+    <input type="text" name="description" value="" class="textField">
+    <input type="submit" name="" value="Submit" class="buttonSub">
+  </form>
 
-  <body>
+</body>
 
-
-    <div class="header">
-<h1>TIC-1 ToDo App</h1>
-</div>
-    <div id="todo-container">
-      <ul>
-      </ul>
-    </div>
-    <form id="sort-todos" class = "sort">
-    <input type="submit" class="sort-button" name="" value="Sort by Name" ><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </form>
-    <form id="add-todo" class="formStyle">
-        <input type="text" name="description" value="" class="textField">
-        <input type="submit" name="" value="Submit" class="buttonSub">
-      </form>
-
-
-  </body>
-  <script type="text/javascript" src="./logic.js"></script>
-  <script type="text/javascript" src="./dom.js"></script>
-
+<script type="text/javascript" src="./logic.js"></script>
+<script type="text/javascript" src="./dom.js"></script>
 
 </html>
